@@ -22,6 +22,21 @@ orgs.newOrg('eclipse-jgit') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('jgit') {
+      allow_merge_commit: true,
+      auto_init: false,
+      default_branch: "master",
+      description: "JGit, the Java implementation of git",
+      has_discussions: true,
+      homepage: "https://www.eclipse.org/jgit/",
+    },
+    orgs.newRepo('jgit-pipelines') {
+      allow_merge_commit: true,
+      default_branch: "master",
+      description: "CI pipelines for JGit",
+      has_discussions: true,
+      homepage: "https://www.eclipse.org/jgit/",
+    },
     orgs.newRepo('jgit-website') {
       allow_merge_commit: true,
       allow_update_branch: false,
