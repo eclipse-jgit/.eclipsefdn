@@ -7,9 +7,6 @@ orgs.newOrg('eclipse-jgit') {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     members_can_change_project_visibility: false,
-    members_can_change_repo_visibility: false,
-    members_can_create_teams: false,
-    members_can_delete_repositories: false,
     name: "Eclipse JGit",
     packages_containers_internal: false,
     packages_containers_public: false,
@@ -21,11 +18,18 @@ orgs.newOrg('eclipse-jgit') {
       default_workflow_permissions: "write",
     },
   },
+  webhooks+: [
+    orgs.newOrgWebhook('https://ci.eclipse.org/jgit/github-webhook/') {
+      content_type: "json",
+      events+: [
+        "pull_request",
+        "push"
+      ],
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('jgit') {
       allow_merge_commit: true,
-      auto_init: false,
-      default_branch: "master",
       description: "JGit, the Java implementation of git",
       has_discussions: true,
       homepage: "https://www.eclipse.org/jgit/",
