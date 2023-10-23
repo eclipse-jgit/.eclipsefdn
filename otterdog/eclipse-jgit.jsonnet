@@ -41,6 +41,15 @@ orgs.newOrg('eclipse-jgit') {
       has_discussions: true,
       homepage: "https://www.eclipse.org/jgit/",
     },
+    orgs.newRepo('jgit-permissions') {
+      auto_init: false,
+      allow_forking: false,
+      allow_merge_commit: true,
+      default_branch: "master",
+      description: "GerritHub permissions for JGit repositories",
+      has_discussions: false,
+      homepage: "https://www.eclipse.org/jgit/",
+    },
     orgs.newRepo('jgit-website') {
       allow_merge_commit: true,
       allow_update_branch: false,
