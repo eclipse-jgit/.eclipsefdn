@@ -3,7 +3,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 orgs.newOrg('eclipse-jgit') {
   settings+: {
     billing_email: "webmaster@eclipse.org",
-    default_repository_permission: "none",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     members_can_change_project_visibility: false,
@@ -33,6 +32,19 @@ orgs.newOrg('eclipse-jgit') {
       description: "JGit, the Java implementation of git",
       has_discussions: true,
       homepage: "https://www.eclipse.org/jgit/",
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
+    },
+    orgs.newRepo('jgit-permissions') {
+      allow_merge_commit: true,
+      description: "GerritHub permissions for JGit repositories",
+      homepage: "https://www.eclipse.org/jgit/",
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('jgit-pipelines') {
       allow_merge_commit: true,
@@ -40,15 +52,10 @@ orgs.newOrg('eclipse-jgit') {
       description: "CI pipelines for JGit",
       has_discussions: true,
       homepage: "https://www.eclipse.org/jgit/",
-    },
-    orgs.newRepo('jgit-permissions') {
-      auto_init: false,
-      allow_forking: false,
-      allow_merge_commit: true,
-      default_branch: "master",
-      description: "GerritHub permissions for JGit repositories",
-      has_discussions: false,
-      homepage: "https://www.eclipse.org/jgit/",
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('jgit-website') {
       allow_merge_commit: true,
@@ -58,6 +65,9 @@ orgs.newOrg('eclipse-jgit') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        enabled: false,
+      },
     },
   ],
 }
