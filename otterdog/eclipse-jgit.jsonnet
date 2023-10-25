@@ -28,6 +28,7 @@ orgs.newOrg('eclipse-jgit') {
   _repositories+:: [
     orgs.newRepo('jgit') {
       allow_merge_commit: true,
+      default_branch: "master",
       description: "JGit, the Java implementation of git",
       has_discussions: true,
       homepage: "https://www.eclipse.org/jgit/",
@@ -38,6 +39,7 @@ orgs.newOrg('eclipse-jgit') {
     },
     orgs.newRepo('jgit-permissions') {
       allow_merge_commit: true,
+      default_branch: "master",
       description: "GerritHub permissions for JGit repositories",
       homepage: "https://www.eclipse.org/jgit/",
       workflows+: {
