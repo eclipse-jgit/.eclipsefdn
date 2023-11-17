@@ -33,7 +33,7 @@ orgs.newOrg('eclipse-jgit') {
           "allows_force_pushes": true,
           "pattern": "*",
           "push_restrictions": [
-            "eclipse-jgit-bot"
+            "@eclipse-jgit-bot"
           ],
           "restricts_pushes": true
         }
@@ -54,7 +54,7 @@ orgs.newOrg('eclipse-jgit') {
           "allows_force_pushes": true,
           "pattern": "*",
           "push_restrictions": [
-            "eclipse-jgit-bot"
+            "@eclipse-jgit-bot"
           ],
           "restricts_pushes": true
         }
@@ -74,7 +74,7 @@ orgs.newOrg('eclipse-jgit') {
           "allows_force_pushes": true,
           "pattern": "*",
           "push_restrictions": [
-            "eclipse-jgit-bot"
+            "@eclipse-jgit-bot"
           ],
           "restricts_pushes": true
         }
@@ -96,7 +96,7 @@ orgs.newOrg('eclipse-jgit') {
           "allows_force_pushes": true,
           "pattern": "*",
           "push_restrictions": [
-            "eclipse-jgit-bot"
+            "@eclipse-jgit-bot"
           ],
           "restricts_pushes": true
         }
