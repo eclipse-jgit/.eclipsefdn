@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-jgit') {
+orgs.newOrg('technology.jgit', 'eclipse-jgit') {
   settings+: {
     description: "",
     name: "Eclipse JGit",
